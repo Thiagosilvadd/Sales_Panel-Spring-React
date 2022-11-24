@@ -1,4 +1,4 @@
-package com.thiagodd.Sales_PanelSpringReact;
+package com.thiagodd.Sales_PanelSpringReact.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
