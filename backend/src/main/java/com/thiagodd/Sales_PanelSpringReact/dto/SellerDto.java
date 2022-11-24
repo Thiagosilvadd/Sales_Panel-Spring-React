@@ -1,14 +1,10 @@
 package com.thiagodd.Sales_PanelSpringReact.dto;
 
 import com.thiagodd.Sales_PanelSpringReact.entities.Seller;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * A DTO for the {@link com.thiagodd.Sales_PanelSpringReact.entities.Seller} entity

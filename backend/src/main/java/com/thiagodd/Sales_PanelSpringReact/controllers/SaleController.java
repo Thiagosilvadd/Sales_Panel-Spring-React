@@ -1,6 +1,8 @@
 package com.thiagodd.Sales_PanelSpringReact.controllers;
 
 import com.thiagodd.Sales_PanelSpringReact.dto.SaleDto;
+import com.thiagodd.Sales_PanelSpringReact.dto.SaleSuccessDto;
+import com.thiagodd.Sales_PanelSpringReact.dto.SaleSumDto;
 import com.thiagodd.Sales_PanelSpringReact.dto.SellerDto;
 import com.thiagodd.Sales_PanelSpringReact.services.SaleService;
 import com.thiagodd.Sales_PanelSpringReact.services.SellerService;
@@ -26,6 +28,18 @@ public class SaleController {
     @GetMapping
     public ResponseEntity<Page<SaleDto>> findAll(Pageable pageable){
         Page<SaleDto> list = service.findAll(pageable);
+        return ResponseEntity.ok().body(list);
+    }
+
+    @GetMapping("/amount-by-seller")
+    public ResponseEntity<List<SaleSumDto>> amountGroupedBySeller(){
+        List<SaleSumDto> list = service.amountGroupedBySeller();
+        return ResponseEntity.ok().body(list);
+    }
+
+    @GetMapping("/success-by-seller")
+    public ResponseEntity<List<SaleSuccessDto>> successGroupedBySeller(){
+        List<SaleSuccessDto> list = service.successGroupedBySeller();
         return ResponseEntity.ok().body(list);
     }
 }
