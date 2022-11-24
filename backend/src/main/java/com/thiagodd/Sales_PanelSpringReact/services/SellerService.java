@@ -3,7 +3,6 @@ package com.thiagodd.Sales_PanelSpringReact.services;
 import com.thiagodd.Sales_PanelSpringReact.dto.SellerDto;
 import com.thiagodd.Sales_PanelSpringReact.entities.Seller;
 import com.thiagodd.Sales_PanelSpringReact.repositories.SellerRepository;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +19,6 @@ public class SellerService {
 
     public List<SellerDto> findAll(){
         List<Seller> result = repository.findAll();
-        return result.stream().map(x -> new SellerDto(x)).collect(Collectors.toList());
+        return result.stream().map(SellerDto::new).collect(Collectors.toList());
     }
 }

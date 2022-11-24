@@ -1,5 +1,6 @@
 package com.thiagodd.Sales_PanelSpringReact.dto;
 
+import com.thiagodd.Sales_PanelSpringReact.entities.Sale;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -23,4 +24,13 @@ public class SaleDto implements Serializable {
     private final Double amount;
     private final LocalDate date;
     private final SellerDto seller;
+
+    public SaleDto(Sale entity){
+        id = entity.getId();
+        visited = entity.getVisited();
+        deals = entity.getDeals();
+        amount = entity.getAmount();
+        date = entity.getDate();
+        seller = new SellerDto(entity.getSeller());
+    }
 }
