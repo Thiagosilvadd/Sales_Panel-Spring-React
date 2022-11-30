@@ -1,37 +1,10 @@
 import React from 'react';
-import NavBar from "./assets/components/NavBar";
-import Footer from "./assets/components/Footer";
-import DataTable from "./assets/components/DataTable";
-import BarChart from "./assets/components/BarChart";
-import DonutChart from "./assets/components/DonutChart";
+import Routes from "./Routes";
 
 
 function App() {
     return (
-        <>
-            <NavBar/>
-            <div className="container">
-                <h1 className="text-primary py-3">Dashboard de Vendas</h1>
-
-                <div className="row px-3">
-                    <div className="col-sm-6">
-                        <h5 className="text-center text-secondary">Taxa de conversão (%)</h5>
-                        <BarChart/>
-                    </div>
-                    <div className="col-sm-6">
-                        <h5 className="text-center text-secondary">Participação nas vendas</h5>
-                        <DonutChart/>
-                    </div>
-                </div>
-
-                <div className="py-3">
-                    <h2 className="text-primary">Todas as Vendas</h2>
-                </div>
-                <DataTable/>
-            </div>
-
-            <Footer/>
-        </>
+        <Routes />
     );
 }
 
